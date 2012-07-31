@@ -13,6 +13,8 @@
 @end
 
 @implementation ViewController
+@synthesize hellotextfield;
+@synthesize hellolabel;
 
 - (void)viewDidLoad
 {
@@ -22,6 +24,8 @@
 
 - (void)viewDidUnload
 {
+    [self setHellotextfield:nil];
+    [self setHellolabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -35,4 +39,7 @@
     }
 }
 
+- (IBAction)helloButtonPressed:(UIButton *)sender {
+    self.hellolabel.text = self.hellotextfield.text;
+}
 @end
